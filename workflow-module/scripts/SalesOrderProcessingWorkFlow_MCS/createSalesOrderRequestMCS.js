@@ -1,28 +1,43 @@
-$.context.SalesOrderHeader= {
-	request: {},
-	response:{}
+$.context.SalesOrderHeader = {
+
+	"request": {},
+
+	"response": {}
+
+
+
 }
 
-var body={
 
-	"SoldToParty": $.context.SoldToParty,
 
-	 "SalesOrderType": $.context.SalesOrderType,
+var body = {
 
-	"TotalNetAmount": $.context.TotalNetAmount.toString(),
 
-	"SalesOrganization": $.context.SalesOrderType,
 
-	"DistributionChannel": $.context.DistributionChannel,
+	"SoldToParty": $.context.salesOrderDetails.shipToParty,
 
-	"OrganizationDivision": $.context.OrganizationDivision
 
- }
+
+	"SalesOrderType": $.context.salesOrderDetails.salesOrderType,
+
+
+
+	"TotalNetAmount": $.context.salesOrderDetails.orderAmount.toString(),
+
+
+
+	"SalesOrganization": $.context.salesOrderDetails.salesOrganisation,
+
+
+
+	"DistributionChannel": $.context.salesOrderDetails.distributionChannel,
+
+
+
+	"OrganizationDivision": $.context.salesOrderDetails.division
+
+
+
+}
 
 $.context.SalesOrderHeader.request = body
-
-console.log($.context===$context)
-
-
-
- 
